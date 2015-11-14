@@ -1,0 +1,6 @@
+H:\2015\semester 2\PR 283 C#\Theseus\FilerTesting\FilerTest\bin\Debug\FilerTest.exe.config
+H:\2015\semester 2\PR 283 C#\Theseus\FilerTesting\FilerTest\bin\Debug\FilerTest.exe
+H:\2015\semester 2\PR 283 C#\Theseus\FilerTesting\FilerTest\bin\Debug\FilerTest.pdb
+H:\2015\semester 2\PR 283 C#\Theseus\FilerTesting\FilerTest\obj\Debug\FilerTest.csprojResolveAssemblyReference.cache
+H:\2015\semester 2\PR 283 C#\Theseus\FilerTesting\FilerTest\obj\Debug\FilerTest.exe
+H:\2015\semester 2\PR 283 C#\Theseus\FilerTesting\FilerTest\obj\Debug\FilerTest.pdb
