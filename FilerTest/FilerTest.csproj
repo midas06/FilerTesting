@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AMap.cs" />
     <Compile Include="Compressor.cs" />
+    <Compile Include="ConsoleView.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Decompressor.cs" />
     <Compile Include="FileHandler.cs" />
+    <Compile Include="IView_Filer.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

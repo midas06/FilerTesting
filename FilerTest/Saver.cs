@@ -9,15 +9,8 @@ namespace FilerTest
 {
     class Saver
     {
-        String filename; //, filePath;
+        String filename, mapName; //, filePath;
         string[] theMap;
-        string mapName;
-
-
-        /*public void SetMap(string[] newMap)
-        {
-            theMap = newMap;
-        }*/
 
         public void SetMap(AMap newMap)
         {
@@ -32,13 +25,21 @@ namespace FilerTest
         }
 
 
-        public void SaveFile(string newPath)
+
+        /* public void SaveFile(string newPath)
+         {
+             StreamWriter sw = new StreamWriter(newPath + @"\" + filename + ".txt"); //filePath + @"\" + filename);
+             foreach (var str in theMap)
+             {
+                 sw.WriteLine(str);
+             }
+             sw.Dispose();
+         }*/
+
+        public void SaveSingle(string newPath, string theString)
         {
             StreamWriter sw = new StreamWriter(newPath + @"\" + filename + ".txt"); //filePath + @"\" + filename);
-            foreach (var str in theMap)
-            {
-                sw.WriteLine(str);
-            }
+            sw.Write(theString);
             sw.Dispose();
         }
 
@@ -51,11 +52,6 @@ namespace FilerTest
             }
             sw.Dispose();
         }
-
-        
-
-
-
 
     }
 }

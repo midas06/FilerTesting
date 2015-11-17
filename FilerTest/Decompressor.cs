@@ -27,7 +27,7 @@ namespace FilerTest
 
             // separate M T X
             dummy = anArray[0].Split('-');
-            theseus =  Array.ConvertAll(dummy, int.Parse);
+            theseus = Array.ConvertAll(dummy, int.Parse);
 
             dummy = anArray[1].Split('-');
             minotaur = Array.ConvertAll(dummy, int.Parse);
@@ -82,12 +82,12 @@ namespace FilerTest
             for (int i = 0; i < compressedMap.Length; i++)
             {
                 theString = compressedMap[i];
-                
+
                 // even #'ed strings
                 if (i % 2 == 0)
                 {
                     string decomp = ".";
-                    
+
                     for (int j = 0; j < theString.Length; j++)
                     {
                         switch (theString[j])
@@ -167,6 +167,17 @@ namespace FilerTest
             {
                 Console.WriteLine(str);
             }
+        }
+
+        public string[] GetTheMap(string newString)
+        {
+            SetCompressed(newString);
+            SeparateToArrays();
+            DecompressLevel2();
+            DecompressLevel1();
+            SetCharacters();
+
+            return theMap;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace FilerTest
         public void FindSpecialCharacters()
         {
             int i = 0, j = 0, length = theMap[i].Length;
-            string str, temp;
+            string str;
             char c;
 
             while (i < theMap.Length)
@@ -31,7 +31,7 @@ namespace FilerTest
                     c = str[j];
                     if (c == 'T')
                     {
-                        theseus = j.ToString() + "-" +  i.ToString();
+                        theseus = j.ToString() + "-" + i.ToString();
                         theMap[i] = str.Replace('T', ' ');
                     }
                     if (c == 'M')
@@ -60,7 +60,7 @@ namespace FilerTest
             string theString;
             int numTiles = (theMap[0].Length - 1) / 4;
             int n;
-            
+
             for (int i = 0; i < theMap.Length; i++)
             {
                 theString = theMap[i];
@@ -172,8 +172,8 @@ namespace FilerTest
 
         }
 
-      
-        
+
+
         public void SetTheResult()
         {
             string tmx = "";

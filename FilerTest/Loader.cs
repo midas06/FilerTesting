@@ -9,11 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace FilerTest
 {
-    public class AMap
-    {
-        public string Name { get; set; }
-        public string[] Map { get; set; }
-    }
+ 
 
 
     class Loader
@@ -21,7 +17,7 @@ namespace FilerTest
         String filePath, fileContents;
         //String[] theMap;
         List<AMap> originalMaps = new List<AMap> { };
-   
+
         public void SetFilePath(string newPath)
         {
             filePath = newPath;
@@ -30,6 +26,11 @@ namespace FilerTest
         public void ExtractFileContents()
         {
             fileContents = File.ReadAllText(filePath);
+        }
+
+        public string GetFileContents()
+        {
+            return fileContents;
         }
 
         public string[] ToStringArray(string newMap)
@@ -44,19 +45,41 @@ namespace FilerTest
             return theMap;
         }
 
-        public void LoadMultipleMaps()
+        
+        
+        public void LoadMultiple(string thePath)
         {
-            SetFilePath(@"H:\2015\semester 2\PR 283 C#\Theseus\loadable.txt");
+            SetFilePath(thePath);
             ExtractFileContents();
-
-            
-
         }
 
+        public List<String[]> ParseMap2()//string allMaps)
+        {
+            string[] newMap, temp;
+            List<string[]> tempMapArray = new List<string[]> { };
+            temp = fileContents.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string str in temp)
+            {
+                newMap = str.Split(new char[] { '&' });
+
+                //newEntry.Map = ToStringArray(newMap[1]);
+                tempMapArray.Add(newMap);
+            }
+
+
+            foreach (string[] str in tempMapArray)
+            {
+                Console.WriteLine("name: {0}, compressed map: {1}", str[0], str[1]);
+            }
+
+
+
+            return tempMapArray;
+        }
         public void ParseMap()//string allMaps)
         {
             string[] newMap, temp;
-            string mapName;
 
             temp = fileContents.Split(new char[] { '$' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -90,16 +113,16 @@ namespace FilerTest
                 {
                     Console.WriteLine(str);
                 }
-                
+
             }
         }
 
-        public string[] GetMap(List<AMap> theList, string mapName)
+        public string[] GetOriginalMap(List<AMap> theList, string mapName)
         {
             var m =
                 (from map in originalMaps
-                where map.Name == mapName
-                select map).Single();
+                 where map.Name == mapName
+                 select map).Single();
 
             /*Console.WriteLine("mapname: {0}", m.Name);
             foreach (string s in m.Map)
@@ -115,12 +138,13 @@ namespace FilerTest
             return originalMaps;
         }
 
+       
 
         /*public string[] GetMap()
         {
             return theMap;
         }*/
 
-        
+
     }
 }
